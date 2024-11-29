@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6483386851756486436
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7946894710773004632}
+  m_Layer: 0
+  m_Name: BulletSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7946894710773004632
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6483386851756486436}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.00000011920929, z: 0.62}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7740400696823889775}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4553196222914533659
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50,7 +81,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9200865033536583048, guid: 387146ebbba757443858693812833aeb, type: 3}
       propertyPath: m_Name
-      value: Player Variant
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 9200865033536583048, guid: 387146ebbba757443858693812833aeb, type: 3}
       propertyPath: m_Layer
@@ -63,7 +94,10 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 6410643850843021323, guid: 387146ebbba757443858693812833aeb, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6078556279891502708, guid: 387146ebbba757443858693812833aeb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7946894710773004632}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 9200865033536583048, guid: 387146ebbba757443858693812833aeb, type: 3}
       insertIndex: -1
@@ -126,4 +160,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   Bullet: {fileID: 2912332913567258878, guid: 212113aa1e76c9c4297e7d7a3768982c, type: 3}
+  bulletSpawn: {fileID: 6483386851756486436}
   BulletSpeed: 100
+--- !u!4 &7740400696823889775 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6078556279891502708, guid: 387146ebbba757443858693812833aeb, type: 3}
+  m_PrefabInstance: {fileID: 4553196222914533659}
+  m_PrefabAsset: {fileID: 0}

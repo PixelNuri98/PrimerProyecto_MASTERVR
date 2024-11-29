@@ -18,6 +18,7 @@ public class PlayerBehaviour : MonoBehaviour
     private CapsuleCollider _col;
 
     public GameObject Bullet;
+    public GameObject bulletSpawn;
     public float BulletSpeed = 100f;
     private bool _isShooting;
 
@@ -48,16 +49,14 @@ public class PlayerBehaviour : MonoBehaviour
         rb.MovePosition(this.transform.position + this.transform.forward * vInput * Time.fixedDeltaTime);
         rb.MoveRotation(rb.rotation * angleRot);
 
-        if (isjumping)
+        if (isjumping && IsGrounded())
         {
             rb.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
         }
         isjumping = false;
 
         if (_isShooting){
-            GameObject newBullet = Instantiate(Bullet,
-            this.transform.position + new Vector3(0, 0, 1),
-            this.transform.rotation);
+            GameObject newBullet = Instantiate(Bullet, bulletSpawn.transform.position + new Vector3(0, 0, 1),bulletSpawn.transform.rotation);
 
             Rigidbody BulletRB = newBullet.GetComponent<Rigidbody>();
 
@@ -68,19 +67,11 @@ public class PlayerBehaviour : MonoBehaviour
     }
     private bool IsGrounded()
     {
-        // 7
-        Vector3 capsuleBottom = new Vector3(_col.bounds.center.x,
-        _col.bounds.min.y, _col.bounds.center.z);
-        // 8
-        bool grounded = Physics.CheckCapsule(_col.bounds.center,
-        capsuleBottom, DistanceToGround, GroundLayer,
-        QueryTriggerInteraction.Ignore);
+        
+        Vector3 capsuleBottom = new Vector3(_col.bounds.center.x, _col.bounds.min.y, _col.bounds.center.z);
+        
+        bool grounded = Physics.CheckCapsule(_col.bounds.center, capsuleBottom, DistanceToGround, GroundLayer, QueryTriggerInteraction.Ignore);
         return grounded;
     }
-
-    /*    private bool InGround()
-        {
-            Vector3 capsuleBottom col.bounds.min.y, col.bounds.center.z);
-        }*/
 }
 
