@@ -4,31 +4,32 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void OnTriggerEnter(Collider other)
     {
-        if(other.name == "Player"){
+        /*        if (other.name == "Player")
+                {
+                    Debug.Log("Player detected, attack");
+                }*/
+        print("hola");
+        if (other.name == "Player")
+        {
             Debug.Log("Player detected, attack");
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-        if(other.name == "Player")
+        /*        if (other.name == "Player")
+                {
+                    Debug.Log("Player out of reach");
+                }*/
+
+        if (other.name == "Player")
         {
-            print("Player out of reach");
+            Debug.Log("Player out of reach");
         }
     }
+
+}
 
 
